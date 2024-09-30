@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 10px;
+}
+
+body{
+    font-family: "Poppins" , sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+p{
+    color: rgb(85, 85, 85);
+}
+
+
+nav , .nav-links{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh;
+    margin-top: 2rem;
+}
+
+.nav-links{
+    gap: 2rem;
+    list-style: none;
+    font-size: 2rem;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+    text-decoration-color:white ;
+}
+
+a:hover{
+    color: grey;
+    text-decoration: underline;
+    text-underline-offset: 3rem; 
+    text-decoration-color: rgb(181 , 181 , 181);
+
+}
+
+.logo{
+    font-size: 5rem;
+    font-weight: 500;
+    color: black;
+}
+
+#title{
+    font-size: 4rem;
+    font-weight: 200;
+}
+
+.logo:hover{
+    cursor: default;
+}
+
+.container{
+    max-width: 95%;
+    height: 70vh;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: linear-gradient(to bottom ,  #ffffff, #210c07c7);
+    border-radius: 10px;
+    display: relative;
+}
+
+ul{
+    list-style: none;
+}
+
+
+.effort{
+    border-bottom: 1px solid #ffffff;
+    border-radius: 10px; 
+    margin: 1rem;
+    padding: 1rem;
+    width: 100%;
+    height: 7rem;
+    display: absolute;
+}
+
+.effort-data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+h1{
+    margin-left: 15rem;
+    font-size: 4rem;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 10px;
+    
+}
+p{
+    color: black;
+    font-weight: lighter;
+    font-family: sans-serif;
+}
+ button{
+    padding: 5px 10px;
+    border: 1px solid ;
+    border-radius: 10px;
+    background: none;
+    cursor: pointer;
+ }
+
+ .approve{
+    border-color: black;
+ }
+
+ .delete{
+    border-color: black;
+ }
+
+ .approve:hover{
+    border-color: green;
+    color: green;
+ }
+
+ .delete:hover{
+    border-color: red;
+    color: red;
+ }
+ 
+
+
+
+
+

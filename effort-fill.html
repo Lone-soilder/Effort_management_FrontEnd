@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="effort-fill-style.css">
+
+<title>Employee Efforts Filling</title>
+  
+
+</head>
+
+<body>
+<nav id="desktop-nav">
+    <div class="logo">
+        iEffort: <span id="title">Employee Efficiency System</span>
+    </div>
+    <div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <div class="container">
+        <form action="">
+            <h2>My Efforts</h2>
+            
+            <div class="date">
+                <div class="from-date">
+                    <label for="from">From :</label>
+                    <input type="date" name="date" id="from">
+                </div>
+                
+                <div class="to-date">
+                    <label for="to">To :</label>
+                    <input type="date" name="date" id="to" >
+                </div>
+            </div>
+
+            <select name="task" id="">
+                <option value="Work">Work</option>
+                <option value="leave">Leave</option>
+                <option value="Holidays">Holidays</option>
+            </select>
+
+            <div class="work-order">
+                <div class="work-type">
+                    <select name="task" id="effort">
+                        <option value="project">Projects</option>
+                        <option value="training">Training</option>
+                        <option value="courses">Courses</option>
+                    </select>
+                </div>
+                <div class="work-hours">
+                    <input type="text" name="hours" id="hours" placeholder="in hours">
+                </div>
+                
+            </div>
+
+            <button >Submit</button>
+
+        </form>
+    </div>
+    <script>
+        // Function to extract query parameters from the URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+        
+        // Get the empId from the URL
+        const empId = getQueryParam('empId');
+        console.log(empId);  // You can now use empId in your JavaScript code
+    </script>
+        
+</body>
+</html>

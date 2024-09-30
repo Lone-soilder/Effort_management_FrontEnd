@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login - WIPRO LIMITED</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color:#482603;
+background-image: linear-gradient(to top ,  #ffffff, #fddaa9);
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
+}
+.login-container {
+background-color: #fff;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.452);
+border-radius: 10px;
+padding: 2rem;
+text-align: center;
+width: 25%;
+}
+
+.company-name {
+font-size: 40px;
+font-weight: 600;
+font-family:sans-serif;
+margin-bottom: 1rem;
+}
+.input-container {
+margin-bottom: 1rem;
+}
+.input-container label {
+display: block;
+font-weight: lighter;
+}
+.input-container input[type="text"],
+.input-container input[type="password"] {
+width: 100%;
+padding: 0.5rem;
+border: 1px solid #8e4c02;
+border-radius: 10px;
+margin-top: 1rem;
+}
+.role-container {
+margin-bottom: 1rem;
+width: 100%;
+}
+.role-container label{
+    display: block;
+    font-weight: lighter;
+    margin-bottom: 1rem;
+}
+.role-container select {
+width: 100%;
+padding: 0.5rem;
+border: 1px solid #8e4c02;
+border-radius: 10px;
+}
+.forgot-password {
+margin-bottom: 1rem;
+}
+.forgot-password a {
+font-weight: bold;
+color: #000000;
+text-decoration: none;
+}
+.submit-btn {
+font-family: "Roboto", sans-serif;
+text-transform: uppercase;
+outline: 0;
+background-image: linear-gradient(45deg, #332016, #f5a321);
+width: 100%;
+border: 0;
+padding: 15px;
+color: #FFFFFF;
+font-size: 20px;
+-webkit-transition: all 0.3s ease;
+transition: all 0.3s ease;
+cursor: pointer;
+}
+.submit-btn:hover {
+background-color: #0056b3;
+}
+
+
+</style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="company-name">iEffort</div>
+            <form id="login-form">
+            <div class="input-container">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="input-container">
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+            </div>
+            <div class="role-container">
+                <label for="role">Select Role:</label>
+                <select id="role" required>
+                    <option value="employee">Employee</option>
+                    <option value="manager">Manager</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+            <div class="forgot-password">
+                <a href="#" id="forgot-password-link">Forgot Password?</a>
+            </div>
+            
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
+    </div>
+<script>
+document.getElementById('login-form').addEventListener('submit', function (event) {
+event.preventDefault();
+const username = document.getElementById('username').value;
+const password = document.getElementById('password').value;
+const role = document.getElementById('role').value;
+// Simulated user database (replace this with your actual user database)
+const user = {
+    username : username,
+    password : password,
+    role : role
+}
+
+console.log(user);
+// Check if the provided credentials match a user in the database
+
+fetch(`http://localhost:8080/effort/getEmp?username=${username}`,{
+     //mode: 'no-cors' , 
+     method: "GET", 
+     headers: {
+        //'Content-Type': 'text/plain; charset=UTF-8'
+        'Content-Type': 'application/json'
+     },
+    // body: JSON.stringify(user)
+    }) 
+.then((response) => {
+    console.log(response);
+    return response.json()
+})
+// .then((response) => {
+//     if (!response.ok) {
+//             throw new Error('Network response was not ok');
+//         }
+//         return response.json(); 
+// }) 
+.then((data) => {
+    
+// Credentials are valid
+if (data.role === 'Employee') {
+
+    if(data.username == username && data.password == password){
+        // Redirect to the XYZ portal for employees
+        window.location.href = `effort-fill.html?empId=${data.empId}`;
+    }
+
+} else if (role === 'manager') {
+
+    if(data.username == username && data.password == password){
+        // Redirect to the XYZ portal for employees
+        window.location.href = `manager.html?empId=${data.empId}`;
+    }
+}
+ else {
+// Invalid credentials; you can display an error message
+alert("Invalid credentials. Please try again.");
+}
+
+})
+.catch((error) => console.log(error))
+
+// // Handle the "Forgot Password?" link
+// document.getElementById('forgot-password-link').addEventListener('click', function
+// (event) {
+// event.preventDefault();
+// // Implement your "Forgot Password" logic here
+// alert('Forgot Password functionality will be implemented in a future version.');
+// })
+})
+
+</script>
+</body>
+</html>
+
