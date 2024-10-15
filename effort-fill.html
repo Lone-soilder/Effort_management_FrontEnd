@@ -26,7 +26,7 @@
 </nav>
 
     <div class="container">
-        <form action="">
+        <form id="effort-form">
             <h2>My Efforts</h2>
             
             <div class="date">
@@ -41,18 +41,18 @@
                 </div>
             </div>
 
-            <select name="task" id="">
-                <option value="Work">Work</option>
-                <option value="leave">Leave</option>
-                <option value="Holidays">Holidays</option>
+            <select name="task" id="effortFor">
+                <option value="project">Project - Lloyds bank</option>
+                <option value="training"> Mandatory Training</option>
+                <option value="courses">Courses</option>
             </select>
 
             <div class="work-order">
                 <div class="work-type">
-                    <select name="task" id="effort">
-                        <option value="project">Projects</option>
-                        <option value="training">Training</option>
-                        <option value="courses">Courses</option>
+                    <select name="task" id="location">
+                        <option value="Work">office</option>
+                        <option value="leave">home</option>
+                        <option value="Holidays">Holidays</option>
                     </select>
                 </div>
                 <div class="work-hours">
@@ -61,21 +61,23 @@
                 
             </div>
 
-            <button >Submit</button>
+            <button id="submit" >Submit</button>
 
         </form>
-    </div>
-    <script>
-        // Function to extract query parameters from the URL
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
+
         
-        // Get the empId from the URL
-        const empId = getQueryParam('empId');
-        console.log(empId);  // You can now use empId in your JavaScript code
-    </script>
+    </div>
+
+    <div class="myChart">
+        <canvas id="performanceChart" width="200px" height="100px" style="margin: 50px 50px;">
+
+        </canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="effort.js"></script> 
+
         
 </body>
 </html>

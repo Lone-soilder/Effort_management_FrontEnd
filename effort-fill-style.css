@@ -162,3 +162,13 @@ button{
 button:hover{
     background-color: rgb(83, 44, 44);
 }
+
+.myChart{
+    background-color: rgb(255, 255, 255);
+    max-width: 900px;
+    height: 450px;
+    padding: 50px;
+    margin: 0 auto;
+    
+
+}

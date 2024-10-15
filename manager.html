@@ -59,6 +59,37 @@
              </ul>
         </div>
     </div>
+    <script>
+        function getQueryParam(param){
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+        const empId = getQueryParam('empId');
+
+        document.getElementById('login-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const role = document.getElementById('role').value;
+        // Simulated user database (replace this with your actual user database)
+        const user = {
+            username : username,
+            password : password,
+            role : role
+        }
+        fetch(`http://localhost:8080/effort/addEffort`,{
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            //body: 
+
+        })
+        .then()
+        .catch()
+
+        })
+    </script>
 
 </body>
 </html>
