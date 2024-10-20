@@ -177,8 +177,6 @@ button:hover{
     height: 450px;
     padding: 50px;
     margin: 0 auto;
-    
-
 }
 
 #month{
@@ -203,6 +201,6 @@ button:hover{
     padding: 10px;
     margin-bottom: 10px;
     background-color: rgb(43, 24, 24);
-    font-weight: lighter;
+    font-weight: normal;
     box-sizing: border-box;   
 }
