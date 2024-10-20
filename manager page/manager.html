@@ -31,65 +31,34 @@
         <div class="effort">
             <ul class="effort-data">
                 <li><p class="employee-id">Employee ID</p></li>
-                <li><p class="employee-details">employee name</p></li>
-                <li><p class="description">description</p></li>
+                <li><p class="effortDate">startDate to endDate</p></li>
+                <li><p class="description">description of the employee</p></li>
                 <li><p class="hours">hours</p></li>
-               <li><button class="approve">Approve</button></li>
-               <li><button class="delete">Delete</button></li> 
+                <div class="button">
+                    <li><button class="approve">Approve</p></li>
+                    <li><button class="delete">Delete</button></li> 
+                </div> 
             </ul>
         </div>
-        <div class="effort">
-            <ul class="effort-data">
-                <li><p class="employee-id">Employee ID</p></li>
-                <li><p class="employee-details">employee name</p></li>
-                <li><p class="description">description</p></li>
-                <li><p class="hours">hours</p></li>
-                <li><button class="approve">Approve</button></li>
-                <li><button class="delete">Delete</button></li> 
-             </ul>
-        </div>
-        <div class="effort">
-            <ul class="effort-data">
-                <li><p class="employee-id">Employee ID</p></li>
-                <li><p class="employee-details">employee name</p></li>
-                <li><p class="description">description</p></li>
-                <li><p class="hours">hours</p></li>
-                <li><button class="approve">Approve</button></li>
-                <li><button class="delete">Delete</button></li> 
-             </ul>
+    </div>
+
+    <div class="container">
+        <div class="empPerformance">
+            <h2>know your employee's performance</h2>
+                <div class="inputs">          
+                    <label for="empId">Emplyee id:</label>
+                    <input type="text" id="employee-id" required>
+                    <button id="performanceCheck">check</button>
+                </div>
+        <canvas id="performanceChart">
+
+        </canvas>
         </div>
     </div>
-    <script>
-        function getQueryParam(param){
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
-        const empId = getQueryParam('empId');
 
-        document.getElementById('login-form').addEventListener('submit', function (event) {
-        event.preventDefault();
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        const role = document.getElementById('role').value;
-        // Simulated user database (replace this with your actual user database)
-        const user = {
-            username : username,
-            password : password,
-            role : role
-        }
-        fetch(`http://localhost:8080/effort/addEffort`,{
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            //body: 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="manager.js"></script> 
 
-        })
-        .then()
-        .catch()
-
-        })
-    </script>
 
 </body>
 </html>
