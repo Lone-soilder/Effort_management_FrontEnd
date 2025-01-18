@@ -80,7 +80,7 @@ document.getElementById("performanceCheck").addEventListener("click", function (
     // })
     .then(data => {
         console.log(data);
-      createChart(data , 'bar');//bar , doughnut , line, polarArea, Radar
+      createChart(data , 'line');//bar , doughnut , line, polarArea, Radar
     })
     .catch(error => {
       console.error('There was a problem with the fetch operation:', error);
